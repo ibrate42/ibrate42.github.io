@@ -3,43 +3,178 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirecting to Invert Image Online</title>
-  <!-- 核心：meta标签跳转（无脚本也生效），3秒延迟可改0秒立即跳 -->
-  <meta http-equiv="refresh" content="0; url=https://invert-image.online">
+  <title>Invert Image Online - 免费在线图片反色工具</title>
+  <meta name="description" content="ibrate42.github.io 为您介绍免费在线图片反色工具 Invert Image Online，一键反色、本地处理、隐私安全，点击直达官方站点。">
+  <meta name="keywords" content="图片反色, invert image, 在线图片工具, 免费反色工具, invert-image.online">
   <style>
-    /* 简单过渡样式，跳转前显示提示 */
-    body {
-      font-family: system-ui, -apple-system, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    body {
       background: #f8fafc;
       color: #1e293b;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      line-height: 1.8;
     }
-    .container {
-      text-align: center;
-      padding: 2rem;
+    h2 {
+      font-size: 1.6rem;
+      color: #0f172a;
+      margin: 2.5rem 0 1.5rem;
+      position: relative;
+      padding-bottom: 0.5rem;
     }
-    a {
+    h2::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 60px;
+      height: 3px;
+      background: #2563eb;
+      border-radius: 3px;
+    }
+    h3 {
+      font-size: 1.2rem;
       color: #2563eb;
-      text-decoration: none;
+      margin: 1.5rem 0 0.8rem;
+    }
+    p {
+      color: #475569;
+      margin-bottom: 1rem;
+    }
+    ol {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+    ol li {
+      flex: 1;
+      min-width: 200px;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      color: #1e293b;
       font-weight: 500;
     }
-    a:hover {
-      text-decoration: underline;
+    .redirect-btn {
+      display: inline-block;
+      padding: 0.875rem 2.5rem;
+      background: #2563eb;
+      color: white;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+      margin: 1rem 0;
+    }
+    .redirect-btn:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
+    .redirect-area {
+      text-align: center;
+      margin: 3rem 0;
+      padding: 2rem;
+      background: #f8fafc;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .second-redirect {
+      text-align: center;
+      margin: 3rem 0;
+      padding: 1.5rem;
+      background: #eff6ff;
+      border-radius: 12px;
+    }
+    footer {
+      margin-top: 4rem;
+      text-align: center;
+      color: #94a3b8;
+      font-size: 0.875rem;
+      padding: 2rem 0;
+      border-top: 1px solid #e2e8f0;
+    }
+    footer p {
+      margin-bottom: 0.5rem;
+      color: #94a3b8;
+    }
+    @media (max-width: 768px) {
+      ol {
+        flex-direction: column;
+      }
+      h2 {
+        font-size: 1.4rem;
+      }
+      .redirect-btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h2>Redirecting to Invert Image Online...</h2>
-    <p>If nothing happens, click here: <a href="https://invert-image.online" target="_blank" rel="noopener noreferrer">https://invert-image.online</a></p>
+  <!-- 欢迎语 -->
+  <p>欢迎访问 ibrate42.github.io，本页面为您介绍一款高效、安全的免费在线图片反色工具 —— <strong>Invert Image Online</strong>，点击下方链接即可直达官方站点，体验便捷的图片反色服务。</p>
+
+  <!-- 核心跳转区域 -->
+  <div class="redirect-area">
+    <h2>前往官方工具</h2>
+    <a href="https://invert-image.online" target="_blank" rel="noopener noreferrer" class="redirect-btn">
+      立即访问 → invert-image.online
+    </a>
+    <p>官方站点安全稳定，全程本地处理，图片永不上传</p>
   </div>
-  <!-- JS脚本跳转（比meta更快，优先执行） -->
-  <script>
-    window.location.href = 'https://invert-image.online';
-  </script>
+
+  <!-- 工具核心功能 -->
+  <h2>工具核心功能</h2>
+  <h3>🖼️ 一键图片反色</h3>
+  <p>快速反转图片颜色，将红色转为青色、绿色转为品红色、蓝色转为黄色，实现负片般的视觉效果，操作简单，秒出结果。</p>
+
+  <h3>⚡ 极速本地处理</h3>
+  <p>所有反色操作均在您的浏览器本地完成，无需将图片上传至服务器，既保证了处理速度，又避免了隐私泄露风险。</p>
+
+  <h3>🔒 隐私绝对安全</h3>
+  <p>图片全程在您的设备上处理，从未离开您的本地环境，没有任何第三方可以访问您的图片文件，隐私有保障。</p>
+
+  <h3>📥 多格式支持</h3>
+  <p>兼容所有常见图片格式，包括 PNG、JPG、JPEG、WEBP 等，支持单图处理、多图批量处理，处理后可直接下载，保留原始分辨率。</p>
+
+  <h3>🆓 完全免费无限制</h3>
+  <p>100% 免费使用，无隐藏收费、无广告弹窗、无需注册登录，可无限制处理任意数量的图片，满足个人和办公需求。</p>
+
+  <!-- 使用步骤 -->
+  <h2>简单4步使用</h2>
+  <ol>
+    <li>1. 上传图片：点击上传按钮或拖拽图片至上传区域</li>
+    <li>2. 自动处理：系统自动完成图片反色，无需手动操作</li>
+    <li>3. 预览结果：实时查看反色后的效果，确认是否符合需求</li>
+    <li>4. 下载保存：点击下载按钮，保存反色后的图片</li>
+  </ol>
+
+  <!-- 二次跳转引导 -->
+  <div class="second-redirect">
+    <p>想要体验便捷的图片反色服务？</p>
+    <a href="https://invert-image.online" target="_blank" rel="noopener noreferrer" class="redirect-btn">
+      直达 Invert Image Online 官方站点
+    </a>
+  </div>
+
+  <!-- 页脚 -->
+  <footer>
+    <p>本页面为 invert-image.online 工具介绍页 | 托管于 GitHub Pages</p>
+    <p>© 2025 ibrate42.github.io | 所有工具功能均由 invert-image.online 提供</p>
+  </footer>
 </body>
 </html>
