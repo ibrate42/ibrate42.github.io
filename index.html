@@ -3,305 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Invert Image Online - Free & Private Image Color Inverter</title>
-  <meta name="description" content="Free online image inverter. Invert image colors in one click, 100% client-side, no upload, no login. Supports PNG, JPG, WEBP, GIF.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>Redirecting to Invert Image Online</title>
+  <!-- 核心：meta标签跳转（无脚本也生效），3秒延迟可改0秒立即跳 -->
+  <meta http-equiv="refresh" content="0; url=https://invert-image.online">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    /* 简单过渡样式，跳转前显示提示 */
     body {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-family: system-ui, -apple-system, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
       background: #f8fafc;
       color: #1e293b;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem 1rem;
-      line-height: 1.6;
     }
-
     .container {
-      width: 100%;
-      max-width: 720px;
       text-align: center;
-    }
-
-    h1 {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: #0f172a;
-    }
-
-    .subtitle {
-      color: #64748b;
-      margin-bottom: 2.5rem;
-      font-size: 1rem;
-    }
-
-    .upload-box {
-      border: 2px dashed #cbd5e1;
-      border-radius: 16px;
-      padding: 3rem 2rem;
-      background: white;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      margin-bottom: 2rem;
-    }
-
-    .upload-box:hover {
-      border-color: #3b82f6;
-      background: #f8fafc;
-    }
-
-    .upload-box.dragover {
-      border-color: #2563eb;
-      background: #eff6ff;
-    }
-
-    #fileInput {
-      display: none;
-    }
-
-    .upload-text {
-      font-size: 1.1rem;
-      color: #475569;
-      margin-bottom: 0.5rem;
-    }
-
-    .upload-hint {
-      font-size: 0.875rem;
-      color: #94a3b8;
-    }
-
-    .preview {
-      margin: 2rem 0;
-      display: none;
-    }
-
-    .preview img {
-      max-width: 100%;
-      max-height: 400px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    .btn {
-      padding: 0.875rem 2rem;
-      border-radius: 10px;
-      font-weight: 600;
-      font-size: 1rem;
-      border: none;
-      cursor: pointer;
-      transition: all 0.2s;
-      margin: 0.5rem;
-    }
-
-    .btn-primary {
-      background: #2563eb;
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: #1d4ed8;
-    }
-
-    .btn-secondary {
-      background: white;
-      color: #475569;
-      border: 1px solid #cbd5e1;
-    }
-
-    .btn-secondary:hover {
-      background: #f1f5f9;
-    }
-
-    .actions {
-      display: none;
-      margin-top: 1.5rem;
-    }
-
-    .features {
-      margin-top: 4rem;
-      text-align: left;
-      background: white;
       padding: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
-
-    .features h3 {
-      font-size: 1.25rem;
-      margin-bottom: 1rem;
-      color: #0f172a;
+    a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
     }
-
-    .features ul {
-      list-style: disc;
-      padding-left: 1.5rem;
-      color: #475569;
-    }
-
-    .features li {
-      margin-bottom: 0.5rem;
-    }
-
-    footer {
-      margin-top: auto;
-      padding-top: 3rem;
-      color: #94a3b8;
-      font-size: 0.875rem;
-    }
-
-    @media (max-width: 640px) {
-      h1 {
-        font-size: 1.75rem;
-      }
-      .upload-box {
-        padding: 2rem 1rem;
-      }
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-
   <div class="container">
-    <h1>Invert Image Online</h1>
-    <p class="subtitle">Free, private, one-click image color inverter — no upload, no account</p>
-
-    <!-- Upload Area -->
-    <div class="upload-box" id="uploadBox">
-      <p class="upload-text">Click or drag an image to upload</p>
-      <p class="upload-hint">Supports: PNG, JPG, JPEG, WEBP, GIF</p>
-      <input type="file" id="fileInput" accept="image/*">
-    </div>
-
-    <!-- Preview -->
-    <div class="preview" id="previewBox">
-      <img id="previewImage" alt="Inverted Preview">
-    </div>
-
-    <!-- Actions -->
-    <div class="actions" id="actionButtons">
-      <button class="btn btn-primary" id="downloadBtn">Download Inverted Image</button>
-      <button class="btn btn-secondary" id="resetBtn">Upload Another Image</button>
-    </div>
-
-    <!-- Features -->
-    <div class="features">
-      <h3>Features</h3>
-      <ul>
-        <li>100% client-side processing — images never leave your device</li>
-        <li>One-click invert & download</li>
-        <li>Supports all common image formats</li>
-        <li>Mobile-friendly & responsive design</li>
-        <li>No ads, no watermarks, no login required</li>
-        <li>Preserves original quality & resolution</li>
-      </ul>
-    </div>
+    <h2>Redirecting to Invert Image Online...</h2>
+    <p>If nothing happens, click here: <a href="https://invert-image.online" target="_blank" rel="noopener noreferrer">https://invert-image.online</a></p>
   </div>
-
-  <footer>
-    © 2025 invert-image.online | Open Source on GitHub
-  </footer>
-
+  <!-- JS脚本跳转（比meta更快，优先执行） -->
   <script>
-    const uploadBox = document.getElementById('uploadBox');
-    const fileInput = document.getElementById('fileInput');
-    const previewBox = document.getElementById('previewBox');
-    const previewImage = document.getElementById('previewImage');
-    const actionButtons = document.getElementById('actionButtons');
-    const downloadBtn = document.getElementById('downloadBtn');
-    const resetBtn = document.getElementById('resetBtn');
-
-    let currentImageURL = '';
-
-    // 点击上传
-    uploadBox.addEventListener('click', () => fileInput.click());
-
-    // 拖放
-    uploadBox.addEventListener('dragover', (e) => {
-      e.preventDefault();
-      uploadBox.classList.add('dragover');
-    });
-
-    uploadBox.addEventListener('dragleave', () => {
-      uploadBox.classList.remove('dragover');
-    });
-
-    uploadBox.addEventListener('drop', (e) => {
-      e.preventDefault();
-      uploadBox.classList.remove('dragover');
-      if (e.dataTransfer.files.length) {
-        fileInput.files = e.dataTransfer.files;
-        handleFile(e.dataTransfer.files[0]);
-      }
-    });
-
-    // 文件选择
-    fileInput.addEventListener('change', (e) => {
-      if (e.target.files[0]) handleFile(e.target.files[0]);
-    });
-
-    // 处理图片 & 反色
-    function handleFile(file) {
-      if (!file.type.startsWith('image/')) return;
-
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        const img = new Image();
-        img.onload = () => {
-          const canvas = document.createElement('canvas');
-          const ctx = canvas.getContext('2d');
-          canvas.width = img.width;
-          canvas.height = img.height;
-          ctx.drawImage(img, 0, 0);
-
-          // 反色处理
-          const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-          const data = imageData.data;
-          for (let i = 0; i < data.length; i += 4) {
-            data[i] = 255 - data[i];     // R
-            data[i + 1] = 255 - data[i + 1]; // G
-            data[i + 2] = 255 - data[i + 2]; // B
-          }
-          ctx.putImageData(imageData, 0, 0);
-
-          currentImageURL = canvas.toURL('image/png');
-          previewImage.src = currentImageURL;
-          previewBox.style.display = 'block';
-          actionButtons.style.display = 'block';
-          uploadBox.style.display = 'none';
-        };
-        img.src = e.target.result;
-      };
-      reader.readAsDataURL(file);
-    }
-
-    // 下载
-    downloadBtn.addEventListener('click', () => {
-      const a = document.createElement('a');
-      a.download = 'inverted-image.png';
-      a.href = currentImageURL;
-      a.click();
-    });
-
-    // 重置
-    resetBtn.addEventListener('click', () => {
-      fileInput.value = '';
-      currentImageURL = '';
-      previewBox.style.display = 'none';
-      actionButtons.style.display = 'none';
-      uploadBox.style.display = 'block';
-    });
+    window.location.href = 'https://invert-image.online';
   </script>
-
 </body>
 </html>
